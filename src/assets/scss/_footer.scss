@@ -1,0 +1,124 @@
+@use 'index';
+@use 'mixins';
+
+.footer {
+  background: linear-gradient(93.29deg, #388AF3 21.04%, #A483E2 88.77%);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: index.$white-color;
+  font-size: 25px;
+  &__inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 23px 90px 0 90px;
+  }
+  &__main-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__main-inner-info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+  &__info {
+    > h3 {
+      color: index.$white-color;
+      font-size: 25px;
+      font-weight: 700;
+      position: relative;
+      margin: 10px 0;
+      display: initial;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        right: -22px;
+        background: index.$white-color;
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+      }
+    }
+    > ul {
+      padding: 0;
+    }
+    > ul > li {
+      line-height: 1;
+      list-style-type: none;
+      padding-bottom: 10px;
+    }
+    > ul > li > a {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: index.$white-color;
+    }
+  }
+  &__download {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      background: url("../images/arrow-top-right.png");
+      width: 12px;
+      height: 12px;
+      right: -16px;
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 34px;
+    line-height: 2;
+  }
+  &__bottom-info {
+    display: flex;
+    justify-content: space-between;
+    > p {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  @include mixins.bp(desktop) {
+    &__logo {
+      margin-bottom: 20px;
+    }
+    &__main-info {
+      flex-direction: column;
+    }
+    &__main-inner-info {
+      justify-content: space-between;
+    }
+    &__contacts {
+      right: -54px;
+    }
+  }
+
+  @include mixins.bp(mobile) {
+    &__main-inner-info {
+      flex-direction: column;
+    }
+    &__contacts {
+      right: 123px;
+      top: 395px;
+    }
+    &__bottom-info {
+      flex-direction: column;
+      > p:first-child {
+        margin: 0;
+      }
+    }
+  }
+}
