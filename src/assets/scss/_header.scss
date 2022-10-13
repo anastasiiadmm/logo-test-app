@@ -78,11 +78,6 @@
     align-items: center;
     flex-grow: 1;
     margin-right: 45px;
-    > div {
-      > p {
-        margin: 0;
-      }
-    }
   }
 
   &__contact-links {
@@ -138,6 +133,9 @@
       border-radius: 100%;
       left:calc(50%);
     }
+  }
+  .active {
+    color: index.$primary-color;
   }
 
   @include mixins.bp(desktop) {

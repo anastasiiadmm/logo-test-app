@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
+import i18n from "i18next";
 import logo from "assets/images/logo.png";
 
+const LIST = [
+  {value: "ru", name: "RU"},
+  {value: "en", name: "EN"}
+];
+
 const Navigation = () => {
+  const [active, setActive] = useState(0);
+
+  const handleChange = (value, idx) => {
+    i18n.changeLanguage(value);
+    setActive(idx);
+  };
+
   return (
     <div className="header__menu-navigation">
 
@@ -18,9 +31,16 @@ const Navigation = () => {
       </div>
 
       <div className="header__contact-list">
-        <div>
-          <a className="header__navigation-links" href="/">RU</a>
-          <a className="header__navigation-links" href="/">EN</a>
+        <div style={{display: 'flex', paddingRight: 12}}>
+          {LIST.map((item, i) => {
+            return <div
+              key={i}
+              onClick={() => handleChange(item.value, i)}
+              className={`header__navigation-links ${active === i ? "active" : ""}`}
+              >
+              {item.name}
+            </div>
+          })}
         </div>
         <div className="header__contact-links">
           <a className="header__contact-amount" href="/">Начать проект</a>

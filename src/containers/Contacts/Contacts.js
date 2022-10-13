@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import {useTranslation} from "react-i18next";
 import BreadcrumbComponent from "components/BreadcrumbComponent/BreadcrumbComponent";
 import letter from "assets/images/letter.png";
 import {Box, FormControlLabel, Radio, TextField} from "@mui/material";
 import "assets/scss/_contacts.scss";
 
 const Contacts = () => {
+  const { t } = useTranslation();
   const [buttonText, setButtonText] = useState('Отправить');
   const [style, setStyle] = useState({
     button_img: false
@@ -29,7 +31,7 @@ const Contacts = () => {
 
   return (
     <div className="contacts">
-      <BreadcrumbComponent homeLink="Главная" textLink="Контакты"/>
+      <BreadcrumbComponent homeLink={t("breadcrumbs.main")} textLink={t("breadcrumbs.contacts")} />
       <div>
         <h1>Мы рядом</h1>
         <p>Заполните форму ниже и мы свяжемся с вами. Не любите формы? Напишите нам на почту <a>info@site.com</a></p>
