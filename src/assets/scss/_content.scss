@@ -1,4 +1,5 @@
 @use 'mixins';
+@use 'index';
 
 .content {
   height: 75vh;
@@ -6,17 +7,56 @@
   margin: 0 40px;
   display: flex;
 
-  &__menu {
+  &__menu_list {
     display: block;
     margin: 0 107px 0 0;
     position: relative;
-    cursor: pointer;
   }
 
-  &__menu-dots {
+  &__menu {
+    cursor: pointer;
+    display: block;
+    margin: 0 107px 0 0;
+    width: 150px;
+    height: 50px;
+    color: #fff;
     position: absolute;
     top: calc(30%);
     left: 0;
+  }
+
+  &__menu-dots {
+    margin: 0 107px 0 0;
+    position: absolute;
+    top: calc(30%);
+    left: 0;
+  }
+
+  &__submenu {
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: -12px;
+    width: 110px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.6);
+    list-style: none;
+    line-height: 2em;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.7s ease-in;
+    > li > a {
+      text-decoration: none;
+      color: index.$white-color;
+      transition: border-bottom 0.7s ease-in;
+      &:hover {
+        border-bottom: 1px solid index.$primary-color;
+      }
+    }
+  }
+
+  &__menu:hover  &__submenu {
+    max-height: 200px;
   }
 
   @include mixins.bp(desktop) {
