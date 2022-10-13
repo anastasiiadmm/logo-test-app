@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import hamburger_menu from "assets/images/hamburger_menu.png";
 import logo from "assets/images/logo.png";
 import close from "assets/images/close.png";
+import {Link} from "react-router-dom";
 
 const MobileNavigation = () => {
   const [open, setOpen] = useState(false);
@@ -26,7 +27,7 @@ const MobileNavigation = () => {
 
   return (
     <div className="header__menu-mobile-navigation">
-      <img alt="logo" src={logo} />
+      <Link to="/"><img alt="logo" src={logo} /></Link>
       {open ? closeIcon : hamburgerIcon}
       {open && (
         <div className="header__menu-mobile-list">

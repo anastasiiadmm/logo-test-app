@@ -3,7 +3,6 @@
 
 .footer {
   background: linear-gradient(93.29deg, #388AF3 21.04%, #A483E2 88.77%);
-  position: fixed;
   width: 100%;
   bottom: 0;
   color: index.$white-color;
@@ -12,7 +11,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin: 23px 90px 0 90px;
+    margin: 23px 187px 0 187px;
   }
   &__main-info {
     display: flex;
@@ -109,6 +108,9 @@
   @include mixins.bp(mobile) {
     &__main-inner-info {
       flex-direction: column;
+    }
+    &__inner-wrapper {
+      margin: 23px 18px 0 18px;
     }
     &__contacts {
       right: 123px;

@@ -1,0 +1,92 @@
+@use 'index';
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  > div > h1 {
+    font-size: 80px;
+    color: index.$primary-color;
+    margin: 0;
+  }
+
+  > div > p {
+    max-width: 600px;
+    font-size: 20px;
+    color: index.$menu-color;
+  }
+
+  &__link {
+    color: index.$primary-color;
+  }
+
+  &__button-img {
+    position: absolute;
+    width: 57px;
+    height: 43px;
+    right: 76px;
+    top: 65px;
+  }
+
+  &__button-content {
+    position: relative;
+    > img {
+      transition: transform 1s ease;
+      position: absolute;
+      top: 70px;
+      left: 88px;
+    }
+    &:hover img {
+      transform: translateX(120%) scale(0);
+    }
+    &:after {
+      transform: translateX(200%) scale(0);
+    }
+    .button_img {
+      transform: translateX(200%) scale(0);
+    }
+  }
+
+  &__button {
+    position: relative;
+    cursor: pointer;
+    color: index.$primary-color;
+    font-size: 20px;
+    font-weight: 800;
+    width: 227px;
+    height: 227px;
+    border-radius: 50%;
+    border: double 4px transparent;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #388AF3, #A483E2);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    overflow: hidden;
+    transition: all .6s;
+    > span {
+      position: relative;
+      top: 29px;
+      transition: all .3s;
+      margin-top: 12px;
+    }
+    &:hover span {
+      top: -8px;
+      color: index.$white-color;
+    }
+    &:focus span {
+      top: -8px;
+      color: index.$white-color;
+    }
+    &:active span{
+      color: index.$white-color;
+    }
+    &:hover {
+      background: index.$primary-color;
+    }
+    &:focus {
+      background: index.$primary-color;
+    }
+    &:active{
+      background: index.$primary-color;
+    }
+  }
+}

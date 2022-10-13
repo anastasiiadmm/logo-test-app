@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 import logo from "assets/images/logo.png";
 
 const Navigation = () => {
@@ -9,9 +10,9 @@ const Navigation = () => {
         <div><a href="/"><img alt="logo" src={logo}/></a></div>
         <div className="header__menu-items">
           <ul>
-            <li><a href="/">Проекты</a></li>
-            <li><a href="/">О компании</a></li>
-            <li><a href="/">Контакты</a></li>
+            <li><NavLink to="/projects">Проекты</NavLink></li>
+            <li><NavLink to="/info">О компании</NavLink></li>
+            <li><NavLink to="/contacts">Контакты</NavLink></li>
           </ul>
         </div>
       </div>
