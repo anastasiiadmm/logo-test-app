@@ -2,5 +2,10 @@
   "breadcrumbs": {
     "main": "Main",
     "contacts": "Contacts"
+  },
+  "navigation": {
+    "projects": "Projects",
+    "company": "About company",
+    "contacts": "Contacts"
   }
 }

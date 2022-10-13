@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import i18n from "i18next";
 import logo from "assets/images/logo.png";
+import {useTranslation} from "react-i18next";
 
 const LIST = [
   {value: "ru", name: "RU"},
@@ -9,6 +10,7 @@ const LIST = [
 ];
 
 const Navigation = () => {
+  const { t } = useTranslation();
   const [active, setActive] = useState(0);
 
   const handleChange = (value, idx) => {
@@ -23,9 +25,9 @@ const Navigation = () => {
         <div><a href="/"><img alt="logo" src={logo}/></a></div>
         <div className="header__menu-items">
           <ul>
-            <li><NavLink to="/projects">Проекты</NavLink></li>
-            <li><NavLink to="/info">О компании</NavLink></li>
-            <li><NavLink to="/contacts">Контакты</NavLink></li>
+            <li><NavLink to="/projects">{t("navigation.projects")}</NavLink></li>
+            <li><NavLink to="/info">{t("navigation.company")}</NavLink></li>
+            <li><NavLink to="/contacts">{t("navigation.contacts")}</NavLink></li>
           </ul>
         </div>
       </div>

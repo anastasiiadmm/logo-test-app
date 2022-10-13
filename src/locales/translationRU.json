@@ -2,5 +2,10 @@
   "breadcrumbs": {
     "main": "Главная",
     "contacts": "Контакты"
+  },
+  "navigation": {
+    "projects": "Проекты",
+    "company": "О компании",
+    "contacts": "Контакты"
   }
 }
