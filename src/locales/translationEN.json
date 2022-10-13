@@ -7,5 +7,9 @@
     "projects": "Projects",
     "company": "About company",
     "contacts": "Contacts"
+  },
+  "contacts": {
+    "main_text": "We are close",
+    "subtext": "Fill out the form below and we will contact you. Don't like shapes? Email us"
   }
 }

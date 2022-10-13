@@ -33,8 +33,8 @@ const Contacts = () => {
     <div className="contacts">
       <BreadcrumbComponent homeLink={t("breadcrumbs.main")} textLink={t("breadcrumbs.contacts")} />
       <div>
-        <h1>Мы рядом</h1>
-        <p>Заполните форму ниже и мы свяжемся с вами. Не любите формы? Напишите нам на почту <a>info@site.com</a></p>
+        <h1>{t("contacts.main_text")}</h1>
+        <p>{t("contacts.subtext")} <a className="contacts__link">info@site.com</a></p>
 
         <Box
           className="contacts__form-styles"
