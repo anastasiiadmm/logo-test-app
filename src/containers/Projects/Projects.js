@@ -1,9 +1,10 @@
 import React from 'react';
+import BreadcrumbComponent from "components/BreadcrumbComponent/BreadcrumbComponent";
 
 const Projects = () => {
   return (
     <div>
-      Projects
+      <BreadcrumbComponent homeLink="Главная" textLink="Проекты"/>
     </div>
   );
 };

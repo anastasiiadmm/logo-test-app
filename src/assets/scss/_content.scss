@@ -1,8 +1,21 @@
+@use 'mixins';
+
 .content {
   height: 75vh;
   overflow-y: scroll;
   margin: 0 40px;
   display: flex;
+
+  &__menu {
+    display: block;
+    margin: 0 107px 0 0;
+  }
+
+  @include mixins.bp(desktop) {
+    &__menu {
+      display: none;
+    }
+  }
 }
 
 .main-content {

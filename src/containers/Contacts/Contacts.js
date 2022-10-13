@@ -12,14 +12,14 @@ const Contacts = () => {
   const [state, setState] = useState({
     name: '',
     email: '',
-    comment: ''
+    comment: '',
+    check: false
   });
 
   const handleClick = (e) => {
     e.preventDefault();
     setButtonText('Ваше сообщение отправлено!');
     setStyle({...style, button_img: true});
-
   }
 
   const handleChange = (e) => {
@@ -35,7 +35,7 @@ const Contacts = () => {
         <p>Заполните форму ниже и мы свяжемся с вами. Не любите формы? Напишите нам на почту <a>info@site.com</a></p>
 
         <Box
-          style={{display: 'flex'}}
+          className="contacts__form-styles"
           component="form"
           sx={{
             '& .MuiTextField-root': {m: 1, width: '25ch'},
@@ -78,8 +78,15 @@ const Contacts = () => {
                 value={state.comment}
                 onChange={handleChange}
               />
-              <FormControlLabel value="female" control={<Radio/>}
+              <FormControlLabel type="checkbox" control={<Radio/>}
                                 style={{paddingLeft: 7}}
+                                name="check"
+                                value={state.check}
+                                checked={state.check}
+                                onChange={() => setState(prevState => ({
+                                  ...state,
+                                  check: !prevState.check
+                                }))}
                                 label={<p>Согласен с <a href="" className="contacts__link">Политикой
                                   конфиденциальности</a></p>}
               />

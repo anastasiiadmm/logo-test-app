@@ -1,8 +1,13 @@
 @use 'index';
+@use 'mixins';
 
 .contacts {
   display: flex;
   flex-direction: column;
+
+  &__form-styles {
+    display: flex;
+  }
 
   > div > h1 {
     font-size: 80px;
@@ -87,6 +92,21 @@
     }
     &:active{
       background: index.$primary-color;
+    }
+  }
+
+  @include mixins.bp(desktop) {
+    &__form-styles {
+      flex-direction: column;
+    }
+  }
+
+  @include mixins.bp(mobile) {
+    > div > h1 {
+      font-size: 40px;
+    }
+    > div > p {
+      font-size: 16px;
     }
   }
 }
