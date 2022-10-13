@@ -9,6 +9,14 @@
   &__menu {
     display: block;
     margin: 0 107px 0 0;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__menu-dots {
+    position: absolute;
+    top: calc(30%);
+    left: 0;
   }
 
   @include mixins.bp(desktop) {
