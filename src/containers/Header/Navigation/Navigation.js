@@ -25,7 +25,7 @@ const Navigation = () => {
         <div><a href="/"><img alt="logo" src={logo}/></a></div>
         <div className="header__menu-items">
           <ul>
-            <li><NavLink to="/">{t("navigation.projects")}</NavLink></li>
+            <li><NavLink to="/projects">{t("navigation.projects")}</NavLink></li>
             <li><NavLink to="/info">{t("navigation.company")}</NavLink></li>
             <li><NavLink to="/contacts">{t("navigation.contacts")}</NavLink></li>
           </ul>
